@@ -17,17 +17,22 @@ class Animal {
     Animal.ladybug,
     Animal.sealion,
   ];
-  static const List<String> animalsNameList = [
+  static List<String> animalsNameList = [
     'cat','elephant','fish','dog','bird','crocodile','ladybug','sealion',
   ];
+  List<String> get animalShuffleNameList {
+    final List<String> shuffleList = animalsNameList;
+    shuffleList.shuffle();
+    return shuffleList;
+}
   static Map<String,String> animalsMap = {
-    animalsNameList[0]: Animal.cat,
-    animalsNameList[1]: Animal.elephant,
-    animalsNameList[2]: Animal.fish,
-    animalsNameList[3]: Animal.dog,
-    animalsNameList[4]: Animal.bird,
-    animalsNameList[5]: Animal.crocodile,
-    animalsNameList[6]: Animal.ladybug,
-    animalsNameList[7]: Animal.sealion,
+    'cat': Animal.cat,
+    'elephant': Animal.elephant,
+    'fish': Animal.fish,
+    'dog': Animal.dog,
+    'bird': Animal.bird,
+    'crocodile': Animal.crocodile,
+    'ladybug': Animal.ladybug,
+    'sealion': Animal.sealion,
   };
 }
