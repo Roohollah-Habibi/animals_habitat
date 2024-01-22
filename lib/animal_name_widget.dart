@@ -1,3 +1,4 @@
+import 'package:animals_habitat/animal_path_widget.dart';
 import 'package:animals_habitat/utils.dart';
 import 'package:flutter/material.dart';
 import 'models/animal_model.dart';
@@ -48,6 +49,12 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
      defaultWidget = textAndImageWidget(imagePath: data);
     });
   }
+  void _onLeave(String? data) {
+    //todo the the code here
+    if(data != foundPathByWidgetName){
+      AnimalPathWidget().f
+    }
+  }
 
   Widget textAndImageWidget({required String imagePath}) {
     return Row(
@@ -70,12 +77,4 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
     );
   }
 
-  void _onLeave(String? data) {
-    //todo the the code here
-    // if(data == foundPathByWidgetName){
-    //   setState(() {
-    //     defaultWidget = textImageWidget(imagePath: data!);
-    //   });
-    // }
-  }
 }

@@ -1,4 +1,4 @@
-import 'package:animals_habitat/home_page_row.dart';
+
 import 'package:animals_habitat/animal_path_widget.dart';
 import 'package:animals_habitat/models/animal_model.dart';
 import 'package:animals_habitat/animal_name_widget.dart';

@@ -21,7 +21,7 @@ class _AnimalPathWidgetState extends State<AnimalPathWidget> {
       width: 100,
       child: Draggable(
         data: widget.imagePath,
-        feedback: _feedback,
+        feedback: feedback,
         onDragCompleted: _onDragCompleted,
         child: isDraggedSuccessful
             ? _customImage(imagePath: checkSignImage)
@@ -30,7 +30,7 @@ class _AnimalPathWidgetState extends State<AnimalPathWidget> {
     );
   }
 
-  Widget get _feedback {
+  Widget get feedback {
     return SizedBox(
         width: 100,
         height: 100,
