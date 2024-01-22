@@ -1,21 +1,21 @@
 class Animal {
-  static const String cat = 'assets/images/bluecat.png';
-  static const String elephant = 'assets/images/blueelephant.png';
-  static const String fish = 'assets/images/bluefish.png';
-  static const String dog = 'assets/images/browndog.png';
-  static const String bird = 'assets/images/greenbird.png';
-  static const String crocodile = 'assets/images/greencorocodile.png';
-  static const String ladybug = 'assets/images/redladybug.png';
-  static const String seal = 'assets/images/sealion.png';
+  static const String _cat = 'assets/images/bluecat.png';
+  static const String _elephant = 'assets/images/blueelephant.png';
+  static const String _fish = 'assets/images/bluefish.png';
+  static const String _dog = 'assets/images/browndog.png';
+  static const String _bird = 'assets/images/greenbird.png';
+  static const String _crocodile = 'assets/images/greencorocodile.png';
+  static const String _ladybug = 'assets/images/redladybug.png';
+  static const String _seal = 'assets/images/sealion.png';
   static const List<String> animalsPathList = [
-    Animal.cat,
-    Animal.elephant,
-    Animal.fish,
-    Animal.dog,
-    Animal.bird,
-    Animal.crocodile,
-    Animal.ladybug,
-    Animal.seal,
+    Animal._cat,
+    Animal._elephant,
+    Animal._fish,
+    Animal._dog,
+    Animal._bird,
+    Animal._crocodile,
+    Animal._ladybug,
+    Animal._seal,
   ];
   static List<String> animalsNameList = [
     'cat',
@@ -35,13 +35,13 @@ class Animal {
   }
 
   static Map<String, String> animalsMap = {
-    'cat': Animal.cat,
-    'elephant': Animal.elephant,
-    'fish': Animal.fish,
-    'dog': Animal.dog,
-    'bird': Animal.bird,
-    'crocodile': Animal.crocodile,
-    'ladybug': Animal.ladybug,
-    'seal': Animal.seal,
+    'cat': Animal._cat,
+    'elephant': Animal._elephant,
+    'fish': Animal._fish,
+    'dog': Animal._dog,
+    'bird': Animal._bird,
+    'crocodile': Animal._crocodile,
+    'ladybug': Animal._ladybug,
+    'seal': Animal._seal,
   };
 }
