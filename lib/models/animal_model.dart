@@ -6,7 +6,7 @@ class Animal {
   static const String bird = 'assets/images/greenbird.png';
   static const String crocodile = 'assets/images/greencorocodile.png';
   static const String ladybug = 'assets/images/redladybug.png';
-  static const String sealion = 'assets/images/sealion.png';
+  static const String seal = 'assets/images/sealion.png';
   static const List<String> animalsPathList = [
     Animal.cat,
     Animal.elephant,
@@ -15,7 +15,7 @@ class Animal {
     Animal.bird,
     Animal.crocodile,
     Animal.ladybug,
-    Animal.sealion,
+    Animal.seal,
   ];
   static List<String> animalsNameList = [
     'cat',
@@ -25,7 +25,7 @@ class Animal {
     'bird',
     'crocodile',
     'ladybug',
-    'sealion',
+    'seal',
   ];
 
   static List<String> get animalShuffleNameList {
@@ -42,11 +42,6 @@ class Animal {
     'bird': Animal.bird,
     'crocodile': Animal.crocodile,
     'ladybug': Animal.ladybug,
-    'sealion': Animal.sealion,
+    'seal': Animal.seal,
   };
 }
-// for(String myKey in animalsNameList){
-// for(String myValue in animalsPathList){
-//
-// }
-// }
