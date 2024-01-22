@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.background,
         appBar: AppBar(
           backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-          title: Text('Animals'),
+          title: const Text('Animals'),
         ),
         body: const HomePage(),
       ),

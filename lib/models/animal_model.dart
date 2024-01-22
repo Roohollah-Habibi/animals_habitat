@@ -6,8 +6,8 @@ class Animal {
   static const String bird = 'assets/images/greenbird.png';
   static const String crocodile = 'assets/images/greencorocodile.png';
   static const String ladybug = 'assets/images/redladybug.png';
-  static const String sealion = 'assets/images/sealion.png';
-  static const List<String> animalsImageList = [
+  static const String seal = 'assets/images/sealion.png';
+  static const List<String> animalsPathList = [
     Animal.cat,
     Animal.elephant,
     Animal.fish,
@@ -15,17 +15,26 @@ class Animal {
     Animal.bird,
     Animal.crocodile,
     Animal.ladybug,
-    Animal.sealion,
+    Animal.seal,
   ];
   static List<String> animalsNameList = [
-    'cat','elephant','fish','dog','bird','crocodile','ladybug','sealion',
+    'cat',
+    'elephant',
+    'fish',
+    'dog',
+    'bird',
+    'crocodile',
+    'ladybug',
+    'seal',
   ];
-  List<String> get animalShuffleNameList {
+//
+  static List<String> get animalShuffleNameList {
     final List<String> shuffleList = animalsNameList;
     shuffleList.shuffle();
     return shuffleList;
-}
-  static Map<String,String> animalsMap = {
+  }
+
+  static Map<String, String> animalsMap = {
     'cat': Animal.cat,
     'elephant': Animal.elephant,
     'fish': Animal.fish,
@@ -33,6 +42,6 @@ class Animal {
     'bird': Animal.bird,
     'crocodile': Animal.crocodile,
     'ladybug': Animal.ladybug,
-    'sealion': Animal.sealion,
+    'seal': Animal.seal,
   };
 }
