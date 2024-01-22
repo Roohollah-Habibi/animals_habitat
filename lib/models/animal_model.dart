@@ -27,7 +27,7 @@ class Animal {
     'ladybug',
     'seal',
   ];
-//
+
   static List<String> get animalShuffleNameList {
     final List<String> shuffleList = animalsNameList;
     shuffleList.shuffle();
