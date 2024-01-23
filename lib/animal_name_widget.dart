@@ -32,11 +32,14 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
       height: 100,
       child: DragTarget<String>(
         builder: (context, candidateData, rejectedData) {
+          if(candidateData.isNotEmpty){
+            //todo we can show some hints to asure the user its the right place
+            return textAndImageWidget(imagePath: candidateData[0]!);
+          }
           return defaultWidget;
         },
         onWillAccept: _onWillAccept,
         onAccept: _onAccept,
-        onLeave: _onLeave,
       ),
     );
   }
@@ -47,10 +50,6 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
     setState(() {
       defaultWidget = textAndImageWidget(imagePath: data);
     });
-  }
-
-  void _onLeave(String? data) {
-    //todo write code for onLeave
   }
 
   Widget textAndImageWidget({required String imagePath}) {
