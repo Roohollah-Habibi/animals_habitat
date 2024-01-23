@@ -13,6 +13,7 @@ class AnimalNameWidget extends StatefulWidget {
 }
 
 class _AnimalNameWidgetState extends State<AnimalNameWidget> {
+  final player = AudioPlayer();
   bool isSelected = false;
   late final String foundPathByWidgetName;
   late Widget defaultWidget;
@@ -37,9 +38,9 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
           if (candidateData.isNotEmpty) {
             return textAndImageWidget(imagePath: candidateData[0]!);
           }
-          if (rejectedData.isNotEmpty) {
+          if (rejectedData.isNotEmpty){
             return onRejectedData;
-          }
+          };
           return defaultWidget;
         },
         onWillAccept: _onWillAccept,
@@ -49,12 +50,14 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
   }
 
   Widget get onRejectedData {
+    rejectSound();
     return const Center(child: Text('Wrong',style: customTextStyleWrongInput,));
   }
 
   bool _onWillAccept(String? data) => data == foundPathByWidgetName;
 
   void _onAccept(String data) {
+    CorrectSound();
     setState(() {
       defaultWidget = textAndImageWidget(imagePath: data);
     });
@@ -89,5 +92,13 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
         textAlign: TextAlign.center,
       ),
     );
+  }
+
+  Future<void> rejectSound() async {
+    player.play(AssetSource('audios/wrong.wav'));
+  }
+
+  Future<void> CorrectSound() async {
+    player.play(AssetSource('audios/correct.wav'));
   }
 }

@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -14,8 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         useMaterial3: true,
-        brightness: Brightness.light
-        ,
+        brightness: Brightness.light,
       ),
       home: Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
           title: const Text('Animals'),
         ),
-        body: const HomePage(),
+        body: HomePage(),
       ),
     );
   }
