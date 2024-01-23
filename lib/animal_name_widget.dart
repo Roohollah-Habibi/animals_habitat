@@ -32,15 +32,29 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
       height: 100,
       child: DragTarget<String>(
         builder: (context, candidateData, rejectedData) {
-          if(candidateData.isNotEmpty){
+          if (candidateData.isNotEmpty) {
             //todo we can show some hints to asure the user its the right place
             return textAndImageWidget(imagePath: candidateData[0]!);
+          }
+          if (rejectedData.isNotEmpty) {
+            return onRejectedData;
           }
           return defaultWidget;
         },
         onWillAccept: _onWillAccept,
         onAccept: _onAccept,
       ),
+    );
+  }
+
+  Widget get onRejectedData {
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.red,
+          border: Border.all(width: 4, color: Colors.white),
+          borderRadius: BorderRadius.circular(20)),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: defaultWidget
     );
   }
 
