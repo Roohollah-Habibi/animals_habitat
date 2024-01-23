@@ -1,4 +1,3 @@
-
 import 'package:animals_habitat/utils.dart';
 import 'package:flutter/material.dart';
 import 'models/animal_model.dart';
@@ -37,6 +36,7 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
         },
         onWillAccept: _onWillAccept,
         onAccept: _onAccept,
+        onLeave: _onLeave,
       ),
     );
   }
@@ -45,29 +45,42 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
 
   void _onAccept(String data) {
     setState(() {
-     defaultWidget = textAndImageWidget(imagePath: data);
+      defaultWidget = textAndImageWidget(imagePath: data);
     });
+  }
+
+  void _onLeave(String? data) {
+    //todo write code for onLeave
   }
 
   Widget textAndImageWidget({required String imagePath}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(
-          imagePath,
-          fit: BoxFit.cover,
+        SizedBox(
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.cover,
+          ),
         ),
-        Text(getSelectedAnimalName,style: customTextStyleWithImage,),
+        Center(
+          child: Text(
+            getSelectedAnimalName,
+            textAlign: TextAlign.center,
+            style: customTextStyleWithImage,
+          ),
+        ),
       ],
     );
   }
 
   Widget get defaultTextWidget {
-    return Text(
-      widget.imageText,
-      style: customTextStyle,
-      textAlign: TextAlign.center,
+    return Center(
+      child: Text(
+        widget.imageText,
+        style: customTextStyle,
+        textAlign: TextAlign.center,
+      ),
     );
   }
-
 }

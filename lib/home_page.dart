@@ -14,9 +14,11 @@ class HomePage extends StatelessWidget {
       children: Animal.animalShuffleNameList.map((animName) {
         final String path = Animal.animalsPathList.elementAt(index);
         index++;
-        return AnimalRow(
-          imageText: animName,
-          imagePath: path,
+        return Expanded(
+          child: AnimalRow(
+            imageText: animName,
+            imagePath: path,
+          ),
         );
       }).toList(),
     );
@@ -32,25 +34,23 @@ class AnimalRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: AnimalPathWidget(
-                imagePath: imagePath,
-              ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 3.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: AnimalPathWidget(
+              imagePath: imagePath,
             ),
-            Expanded(
-              flex: 3,
-              child: AnimalNameWidget(
-                imageText: imageText,
-              ),
+          ),
+          Expanded(
+            flex: 3,
+            child: AnimalNameWidget(
+              imageText: imageText,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

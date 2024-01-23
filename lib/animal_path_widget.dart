@@ -13,7 +13,6 @@ class AnimalPathWidget extends StatefulWidget {
 
 class _AnimalPathWidgetState extends State<AnimalPathWidget> {
   bool isDraggedSuccessful = false;
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(

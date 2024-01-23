@@ -11,7 +11,8 @@ const TextStyle customTextStyle = TextStyle(
 );
 const TextStyle customTextStyleWithImage = TextStyle(
   fontWeight: FontWeight.normal,
+  letterSpacing: 2,
   color: Color.fromARGB(255, 0, 156, 2),
   fontFamily: 'big_button_font',
-  fontSize: 24,
+  fontSize: 22,
 );
