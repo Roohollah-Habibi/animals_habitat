@@ -1,6 +1,7 @@
 import 'package:animals_habitat/utils.dart';
 import 'package:flutter/material.dart';
 import 'models/animal_model.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class AnimalNameWidget extends StatefulWidget {
   final String imageText;
@@ -12,6 +13,7 @@ class AnimalNameWidget extends StatefulWidget {
 }
 
 class _AnimalNameWidgetState extends State<AnimalNameWidget> {
+  bool isSelected = false;
   late final String foundPathByWidgetName;
   late Widget defaultWidget;
   late final String getSelectedAnimalName;
@@ -33,7 +35,6 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
       child: DragTarget<String>(
         builder: (context, candidateData, rejectedData) {
           if (candidateData.isNotEmpty) {
-            //todo we can show some hints to asure the user its the right place
             return textAndImageWidget(imagePath: candidateData[0]!);
           }
           if (rejectedData.isNotEmpty) {
@@ -48,14 +49,7 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
   }
 
   Widget get onRejectedData {
-    return Container(
-      decoration: BoxDecoration(
-          color: Colors.red,
-          border: Border.all(width: 4, color: Colors.white),
-          borderRadius: BorderRadius.circular(20)),
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: defaultWidget
-    );
+    return const Center(child: Text('Wrong',style: customTextStyleWrongInput,));
   }
 
   bool _onWillAccept(String? data) => data == foundPathByWidgetName;
