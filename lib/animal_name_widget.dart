@@ -30,34 +30,31 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 100,
-      height: 100,
-      child: DragTarget<String>(
-        builder: (context, candidateData, rejectedData) {
-          if (candidateData.isNotEmpty) {
-            return textAndImageWidget(imagePath: candidateData[0]!);
-          }
-          if (rejectedData.isNotEmpty){
-            return onRejectedData;
-          };
-          return defaultWidget;
-        },
-        onWillAccept: _onWillAccept,
-        onAccept: _onAccept,
-      ),
+    return DragTarget<String>(
+      builder: (context, candidateData, rejectedData) {
+        if (candidateData.isNotEmpty) {
+          return textAndImageWidget(imagePath: candidateData[0]!);
+        }
+        if (rejectedData.isNotEmpty){
+          return onRejectedData;
+        }
+        return defaultWidget;
+      },
+      onWillAccept: _onWillAccept,
+      onAccept: _onAccept,
     );
   }
 
   Widget get onRejectedData {
-    rejectSound();
+
     return const Center(child: Text('Wrong',style: customTextStyleWrongInput,));
   }
 
   bool _onWillAccept(String? data) => data == foundPathByWidgetName;
 
+
   void _onAccept(String data) {
-    CorrectSound();
+    correctSound();
     setState(() {
       defaultWidget = textAndImageWidget(imagePath: data);
     });
@@ -67,18 +64,14 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-          ),
+        Image.asset(
+          imagePath,
+          fit: BoxFit.cover,
         ),
-        Center(
-          child: Text(
-            getSelectedAnimalName,
-            textAlign: TextAlign.center,
-            style: customTextStyleWithImage,
-          ),
+        Text(
+          getSelectedAnimalName,
+          textAlign: TextAlign.center,
+          style: customTextStyleWithImage,
         ),
       ],
     );
@@ -89,7 +82,6 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
       child: Text(
         widget.imageText,
         style: customTextStyle,
-        textAlign: TextAlign.center,
       ),
     );
   }
@@ -98,7 +90,7 @@ class _AnimalNameWidgetState extends State<AnimalNameWidget> {
     player.play(AssetSource('audios/wrong.wav'));
   }
 
-  Future<void> CorrectSound() async {
+  Future<void> correctSound() async {
     player.play(AssetSource('audios/correct.wav'));
   }
 }
